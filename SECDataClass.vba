@@ -76,6 +76,9 @@ Public Function httpDownLoad(EndPoint As String)
                 oStream.Write WinHttpReq.responseBody
                 oStream.SaveToFile "C:\SECVba\" & EndPoint & ".zip", 1 ' 1 = no overwrite, 2 = overwrite
             oStream.Close
+            If Me.dirExists(EndPoint) Then
+                Call unzip(EndPoint)
+            End If
         End If
     Else
         If Me.dirExists(EndPoint) Then
