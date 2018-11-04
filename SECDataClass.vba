@@ -4,6 +4,7 @@ Public downloadString As String
 
 'Note this class can be utilized to download tab deliminated SEC data. There is one common input for methods herein which is the EndPoint variable.
 'This endpoint variable represents you quarter and year you want to download in the format of Yearq#. Example: 2018q3, note this is case sensitivite.
+'The other class is uitilized for querying the data downloaded here
 Private Function httpGet(myUrl As String)
     Dim WinHttpReq As Object
     Set WinHttpReq = CreateObject("Microsoft.XMLHTTP")
