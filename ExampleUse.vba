@@ -25,3 +25,13 @@ downLoadandUnzip:
     End If
     
 End Sub
+
+'The below sub loads all of the SEC data tables to SQLserver 
+Sub LoadNumTable()
+    Dim TestString As New SQLServerLoad
+    Dim TableName As String
+    For Each TableName in TestString.vSECfileArray
+        Call TestString.createSECTables(TestString.vSECfileNameHeadersArray, TableName)
+        'note the loading of these tables will only need to occur once
+    Next TableName
+End Sub
