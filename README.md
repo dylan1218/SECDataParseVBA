@@ -8,3 +8,11 @@ Note: This repository is in-progress. As so far the class being built allows you
 <b>Requirements:</b>
 <br>
 SQL Server and msoledbsql_18.1.0.0_x64.msi(or msoledbsql_18.1.0.0_x84.msi)
+
+<b>Instructions:</b>
+<br>
+<b>(1)</b> Place the classes into a VBA project
+<br>
+<b>(2)</b> Download SQL Server and the msi file for the ability to work with SQL server from VBA
+<br>
+<b>(3)</b> Use the class methods in a module
