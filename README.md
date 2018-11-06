@@ -4,6 +4,8 @@ Download and query SEC XBRL tags from quarterly and annual financial data
 
 Note: This repository is in-progress. As so far the class being built allows you to download quarterly data from the SEC and unzip located at the following directory: C:\SECVba. A second class can be utilized to load the data into SQL server. Progress is being made on a third class with methods to return SQL strings with more simple user inputs (think =returnSECDataArray(Array(adsh, ddate, value), currentassets))) 
 
+Without the third class queries can still be made to SQL server but are not as user friendly. Refer to the example module in this respository for an example query.
+
 
 <b>Requirements:</b>
 <br>
