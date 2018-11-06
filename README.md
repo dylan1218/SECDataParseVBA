@@ -8,10 +8,12 @@ In recent years XBRL has made strides in standardizing SEC filing data. Such to 
 
 My goal in this project is to make data more accessible in the tool that millions of financial analyst around the world use everyday (excel). A simple set up process will allow users with rudimentry VBA skills to access SEC data programatically. From there UDF's will allow even non-VBA excel users to quickly obtain any peice of SEC filing data without ever having to leave excel.
 
-<b>Project progrtess:</b>
-Note: This repository is in-progress. As so far the class being built allows you to download quarterly data from the SEC and unzip located at the following directory: C:\SECVba. A second class can be utilized to load the data into SQL server. Progress is being made on a third class with methods to return SQL strings with more simple user inputs (think =returnSECDataArray(Array(adsh, ddate, value), currentassets))) 
-
-Without the third class queries can still be made to SQL server but are not as user friendly. Refer to the example module in this respository for an example query.
+<b>Project progress:</b>
+Classes to build:
+(1) Download SEC Data Class (Complete)
+(2) Load SQL Data Class (50%)
+(3) Query SQL Data Class (10%)
+(4) XBRL taxonomy integration (not started)
 
 
 <b>Requirements:</b>
