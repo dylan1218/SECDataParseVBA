@@ -7,7 +7,7 @@ Note: This repository is in-progress. As so far the class being built allows you
 
 <b>Requirements:</b>
 <br>
-SQL Server (2017) and msoledbsql_18.1.0.0_x64.msi(or msoledbsql_18.1.0.0_x84.msi)
+SQL Server (2017) and related driver: msoledbsql_18.1.0.0_x64.msi(or msoledbsql_18.1.0.0_x84.msi)
 
 <b>Instructions:</b>
 <br>
