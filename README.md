@@ -17,6 +17,8 @@ Without the third class queries can still be made to SQL server but are not as u
 <b>Requirements:</b>
 <br>
 SQL Server (2017) and related driver: msoledbsql_18.1.0.0_x64.msi(or msoledbsql_18.1.0.0_x84.msi)
+<br>
+Note: Late binding is utilized throughout the class modules, and as such no direct references to libraries need to be made in the VBA interface.
 
 <b>Instructions:</b>
 <br>
