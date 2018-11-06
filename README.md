@@ -21,5 +21,5 @@ SQL Server (2017) and related driver: msoledbsql_18.1.0.0_x64.msi(or msoledbsql_
 
 
 
-Example use to instantly query array of data into excel from SQL server (current assets for all SEC filers as of 20180331):
+Example use to instantly query array of data into excel from SQL server (current assets for selected SEC filers as of 20180331):
 ![alt text](https://github.com/dylan1218/SECDataParseVBA/blob/master/ExampleArrayResult.PNG)
