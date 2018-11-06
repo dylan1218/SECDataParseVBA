@@ -10,9 +10,13 @@ My goal in this project is to make data more accessible in the tool that million
 
 <b>Project progress:</b>
 Classes to build:
+<br>
 (1) Download SEC Data Class (Complete)
+<br>
 (2) Load SQL Data Class (50%)
+<br>
 (3) Query SQL Data Class (10%)
+<br>
 (4) XBRL taxonomy integration (not started)
 
 
