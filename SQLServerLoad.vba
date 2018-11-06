@@ -45,6 +45,29 @@ Public Function vTableCreateString(vSECfileNameHeadersArray As Variant, vSECfile
 
 End Function
 
+Public Function dropSECTables(SECfileArray As Variant)
+    Dim conn As Variant
+    Dim rst As Variant
+    Dim x As Integer
+    
+    Set conn = CreateObject("ADODB.Connection")
+    Set rst = CreateObject("ADODB.Recordset")
+    
+    conn.ConnectionString = vSQLServerConnectionString
+    
+    conn.Open
+    
+    For x = 0 To 3
+        On Error GoTo loopContinue
+        conn.Execute "DROP TABLE " & Me.vSECfileArray(x)
+loopContinue:
+Resume loopContinue2
+loopContinue2:
+        x = x + 1
+    Next x
+    conn.Close
+End Function
+
 Public Function createSECTables(vSECfileNameHeadersArray As Variant, vSECfileArrayName As Variant)
     'Note this only needs to be ran once
     
@@ -61,3 +84,32 @@ Public Function createSECTables(vSECfileNameHeadersArray As Variant, vSECfileArr
     conn.Close
     
 End Function
+
+Public Function addDataToTables(vSECfileName As Variant, filePath As String)
+    
+    Dim conn As Variant
+    Dim rst As Variant
+    Dim strSQL As String
+    Dim indexInArray As Integer
+    
+    'filePath = "C:\SECVba\2018q3\num.txt"
+    
+    Set conn = CreateObject("ADODB.Connection")
+    Set rst = CreateObject("ADODB.Recordset")
+    
+    indexInArray = Application.Match(vSECfileName, Me.vSECfileArray, False) - 1
+    
+    conn.ConnectionString = Me.vSQLServerConnectionString
+    
+    conn.Open
+        conn.CommandTimeout = 0
+        strSQL = "BULK " & _
+        "INSERT " & Me.vSECfileArray(indexInArray) & _
+        " FROM " & Chr(39) & filePath & Chr(39) & _
+        " WITH ( FIELDTERMINATOR = '\t', ROWTERMINATOR = '0x0a')"
+    
+    conn.Execute strSQL
+    conn.Close
+    
+End Function
+
