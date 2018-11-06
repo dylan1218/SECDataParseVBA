@@ -16,3 +16,8 @@ SQL Server and msoledbsql_18.1.0.0_x64.msi(or msoledbsql_18.1.0.0_x84.msi)
 <b>(2)</b> Download SQL Server and the msi file for the ability to work with SQL server from VBA
 <br>
 <b>(3)</b> Use the class methods in a module
+
+
+
+Example use to instantly query array of data into excel from SQL server (current assets for all SEC filers as of 20180331):
+![alt text](https://github.com/dylan1218/SECDataParseVBA/blob/master/ExampleArrayResult.PNG)
