@@ -4,10 +4,6 @@ Download and query SEC XBRL tags from quarterly and annual financial data
 <b>Purpose</b>
 SEC fundamental data has historically been a manual process to view and obtain. You typically have two options, (1) find the filing directly through Edgar, or (2) use a web application which may or may not have a paywall.
 
-In recent years XBRL has made strides in standardizing SEC filing data. Such to the extent that anyone can directly download all filing XBRL tag data directly from the SEC.gov website. 
-
-My goal in this project is to make data more accessible in the tool that millions of financial analyst around the world use everyday (excel). A simple set up process will allow users with rudimentry VBA skills to access SEC data programatically. From there UDF's will allow even non-VBA excel users to quickly obtain any peice of SEC filing data without ever having to leave excel.
-
 Note that this project bypasses having to access a web api, and effeciently sets up your own database. The benefits are that data can be accessed without limits of size or number of requests. The downside of course is that we must setup the database. With the classess the database setup should take no longer than 20 to 30 minutes including time to load. 
 
 <b>Project progress:</b>
