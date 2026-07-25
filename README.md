@@ -1,6 +1,6 @@
 # SEC XBRL Data for Excel
 
-A tool for downloading, storing, and querying SEC quarterly and annual XBRL data directly from Excel.
+A tool for downloading, storing, and querying SEC quarterly and annual XBRL data directly from Excel. Built entirely on VBA (yes, really, entirely VBA :) )
 
 ## Why I Built It
 
