@@ -4,7 +4,11 @@ Download and query SEC XBRL tags from quarterly and annual financial data
 <b>Purpose</b>
 Access XBRL data from UDF's within excel.
 
-Note that this project bypasses having to access a web api, and effeciently sets up your own database. The benefits are that data can be accessed without limits of size or number of requests. The downside of course is that we must setup the database. With the classess the database setup should take no longer than 20 to 30 minutes including time to load. 
+Note that this project bypasses having to access a web api, and caches XBRL models into a local database that is queryable from VBA based macros.
+
+Why use this? If you want to effeciently query SEC XBRL data with exceptionally low latency (it's all local!).
+
+There's likely better tools out there these days. But this project was to explore what it would mean to put high-performant XBRL querying methodologies in the tool and interface that finance and accounting uses most: excel.
 
 <b>Project progress:</b>
 Classes to build:
