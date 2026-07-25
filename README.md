@@ -13,6 +13,8 @@ Rather than calling a web API every time a user requested data, the tool downloa
 
 Today, modern analytics platforms and Excel integrations solve much of this much more cleanly. This is not a production scale architecture by any means, but does showcase localized excel based solution capabilities. At the time, however, this was an early exploration of combining Excel’s accessibility with the performance and scale of a relational database.
 
+The excel native query interface still has functional business value, but the underlying pipelines and ETL would require a complete refactor to have meaningful production scale.
+
 
 ## How It Works
 
