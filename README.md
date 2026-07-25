@@ -6,9 +6,9 @@ Access XBRL data from UDF's within excel.
 
 Note that this project bypasses having to access a web api, and caches XBRL models into a local database that is queryable from VBA based macros.
 
-Why use this? If you want to effeciently query SEC XBRL data with exceptionally low latency (it's all local!).
+**Why use this? If you want to effeciently query SEC XBRL data with exceptionally low latency (it's all local!).
 
-There's likely better tools out there these days. But this project was to explore what it would mean to put high-performant XBRL querying methodologies in the tool and interface that finance and accounting uses most: excel.
+There's likely better tools out there these days. But this project was to explore what it would mean to put high-performant XBRL querying methodologies in the tool and interface that finance and accounting uses most: excel.**
 
 <b>Project progress:</b>
 Classes to build:
