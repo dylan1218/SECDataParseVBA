@@ -1,46 +1,62 @@
-# SECDataParseVBA
-Download and query SEC XBRL tags from quarterly and annual financial data
+# SEC XBRL Data for Excel
 
-<b>Purpose</b>
-Access XBRL data from UDF's within excel.
+A tool for downloading, storing, and querying SEC quarterly and annual XBRL data directly from Excel.
 
-Note that this project bypasses having to access a web api, and caches XBRL models into a local database that is queryable from VBA based macros.
+## Why I Built It
 
-**Why use this? If you want to effeciently query SEC XBRL data with exceptionally low latency (it's all local!).
+The project had two goals:
 
-There's likely better tools out there these days. But this project was to explore what it would mean to put high-performant XBRL querying methodologies in the tool and interface that finance and accounting uses most: excel.**
+1. Make SEC XBRL data easier for finance and accounting users to work with through familiar Excel functions and VBA.
+2. Explore what scalable, database-backed interactivity from Excel could look like.
 
-<b>Project progress:</b>
-Classes to build:
-<br>
-(1) Download SEC Data Class (Complete)
-<br>
-(2) Load SQL Data Class (50%)
-<br>
-(3) Query SQL Data Class (10%)
-<br>
-(4) XBRL taxonomy integration (not started)
+Rather than calling a web API every time a user requested data, the tool downloaded SEC datasets, cached them in a local SQL Server database, and exposed low-latency queries through Excel VBA and user-defined functions.
+
+Today, modern analytics platforms and Excel integrations solve much of this more cleanly. At the time, however, this was an early exploration of combining Excel’s accessibility with the performance and scale of a relational database.
 
 
-<b>Requirements:</b>
-<br>
-SQL Server (2017) and related driver: msoledbsql_18.1.0.0_x64.msi(or msoledbsql_18.1.0.0_x84.msi)
-<br>
-Note: Late binding is utilized throughout the class modules, and as such no direct references to libraries need to be made in the VBA interface.
+## How It Works
 
-<b>Instructions:</b>
-<br>
-<b>(1)</b> Place the classes into a VBA project
-<br>
-<b>(2)</b> Download SQL Server and the msi file for the ability to work with SQL server from VBA
-<br>
-<b>(3)</b> Place "SECVba" file at the C:\ directory"
-<br>
-<b>(4)</b> Use the class methods in a module to download SEC data, create SQL Server tables, and load the tables for the data you've downloaded. 
-<br>
-Note: It's highly suggested you include data validation of some sort for your loads. For example, after loading Q3'2018 num tables you should note that somewhere either as a record in a SQL table, or a sheet in excel. Purpose of this is to ensure you don't load duplicates. 
+The intended workflow was:
 
+* Download SEC XBRL datasets
+* Create and load SQL Server tables
+* Store financial facts locally
+* Query those facts from Excel using VBA
+* Return results directly into Excel ranges or arrays
 
+Because the data was cached locally, users could repeatedly query large SEC datasets without waiting on external API calls.
 
-Example use to instantly query array of data into excel from SQL server (current assets for selected SEC filers as of 20180331):
-![alt text](https://github.com/dylan1218/SECDataParseVBA/blob/master/ExampleArrayResult.PNG)
+## Project Status
+
+* **SEC data download class:** Complete
+* **SQL data loading class:** Approximately 50%
+* **SQL query class:** Approximately 10%
+* **XBRL taxonomy integration:** Not started
+
+## Requirements
+
+* Microsoft SQL Server 2017
+* Microsoft OLE DB Driver for SQL Server
+* Excel with VBA support
+
+The VBA classes use late binding, so users do not need to manually add library references within the VBA editor.
+
+## Setup
+
+1. Import the class modules into an Excel VBA project.
+2. Install SQL Server and the appropriate Microsoft OLE DB driver.
+3. Place the `SECVba` project files in the configured local directory.
+4. Use the provided class methods to:
+
+   * download SEC data
+   * create SQL Server tables
+   * load downloaded datasets
+   * query financial facts from Excel
+
+Load validation is strongly recommended. For example, the process should record which SEC quarter has already been loaded to prevent duplicate ingestion.
+
+## Example
+
+The example below returns current-asset values for selected SEC filers as of March 31, 2018, directly from SQL Server into an Excel array.
+
+![Example Excel Query Result](https://github.com/dylan1218/SECDataParseVBA/blob/master/ExampleArrayResult.PNG)
